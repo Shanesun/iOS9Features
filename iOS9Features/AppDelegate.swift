@@ -41,6 +41,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // 1. SearchAPI
+    func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
+        
+        // find id from userinfo
+        let friendID = userActivity.userInfo?["kCSSearchableItemActivityIdentifier"] as! String;
+        
+        // 
+        let navigationController = (window?.rootViewController as! UINavigationController);
+        navigationController.popViewControllerAnimated(false);
+        
+        let friendTableViewController = navigationController.viewControllers.first as! FriendTableViewController;
+        
+//        friendTableViewController.showFriend(friendID)
+    }
 
 }
 
