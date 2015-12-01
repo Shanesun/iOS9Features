@@ -10,10 +10,17 @@ import UIKit
 
 class FriendViewController: UIViewController {
 
+    var person: Person!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        nameLabel.text = person.name;
+        imageView.image = person.image;
+        
     }
 
     override func didReceiveMemoryWarning() {

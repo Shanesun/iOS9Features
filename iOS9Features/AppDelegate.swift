@@ -54,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let friendTableViewController = navigationController.viewControllers.first as! FriendTableViewController;
         
 //        friendTableViewController.showFriend(friendID)
+        return true;
     }
 
 }

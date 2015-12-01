@@ -71,7 +71,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="kc6-Lo-Hd6" kind="show" id="eaX-5R-JTT"/>
+                                    <segue destination="kc6-Lo-Hd6" kind="show" identifier="showFriend" id="eaX-5R-JTT"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,8 +97,33 @@
                     <view key="view" contentMode="scaleToFill" id="STP-fU-ia0">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RaD-Jr-Rhb">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="L8p-F8-bkF"/>
+                                    <constraint firstAttribute="width" constant="100" id="Yhz-ta-707"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXL-z8-UEJ">
+                                <rect key="frame" x="266" y="84" width="68" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CXL-z8-UEJ" firstAttribute="top" secondItem="fMO-GB-9Qg" secondAttribute="bottom" constant="20" id="Pm9-hQ-zBg"/>
+                            <constraint firstItem="RaD-Jr-Rhb" firstAttribute="centerY" secondItem="STP-fU-ia0" secondAttribute="centerY" id="bh0-x5-Tm9"/>
+                            <constraint firstItem="RaD-Jr-Rhb" firstAttribute="centerX" secondItem="STP-fU-ia0" secondAttribute="centerX" id="jxH-ZS-UoZ"/>
+                            <constraint firstItem="CXL-z8-UEJ" firstAttribute="centerX" secondItem="STP-fU-ia0" secondAttribute="centerX" id="nlE-gf-w3x"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="RaD-Jr-Rhb" id="XBf-YT-lfe"/>
+                        <outlet property="nameLabel" destination="CXL-z8-UEJ" id="ADn-eH-V3K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="woO-Mi-FfJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
