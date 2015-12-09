@@ -48,12 +48,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let friendID = userActivity.userInfo?["kCSSearchableItemActivityIdentifier"] as! String;
         
         // 
-        let navigationController = (window?.rootViewController as! UINavigationController);
+        let tabbarController = (window?.rootViewController as! UITabBarController);
+        tabbarController.selectedIndex = 0;
+        let navigationController = (tabbarController.selectedViewController as! UINavigationController);
         navigationController.popViewControllerAnimated(false);
         
-        let friendTableViewController = navigationController.viewControllers.first as! FriendTableViewController;
+        let featuresViewController = FeaturesViewController.init();
+        navigationController.pushViewController(featuresViewController, animated: false);
         
-//        friendTableViewController.showFriend(friendID)
+        let friendTableViewController = FriendTableViewController.init();
+        navigationController.pushViewController(friendTableViewController, animated: false);
+        
+         friendTableViewController.showFriend(friendID);
         return true;
     }
 
