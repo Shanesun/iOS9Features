@@ -40,7 +40,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
+    
+    
     // 1. SearchAPI
     func application(application: UIApplication, continueUserActivity userActivity: NSUserActivity, restorationHandler: ([AnyObject]?) -> Void) -> Bool {
         
@@ -51,10 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tabbarController = (window?.rootViewController as! UITabBarController);
         tabbarController.selectedIndex = 0;
         let navigationController = (tabbarController.selectedViewController as! UINavigationController);
-        navigationController.popViewControllerAnimated(false);
-        
-        let featuresViewController = FeaturesViewController.init();
-        navigationController.pushViewController(featuresViewController, animated: false);
+        navigationController.popToRootViewControllerAnimated(false);
         
         let friendTableViewController = FriendTableViewController.init();
         navigationController.pushViewController(friendTableViewController, animated: false);

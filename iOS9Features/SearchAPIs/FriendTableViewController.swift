@@ -23,7 +23,14 @@ class FriendTableViewController: UITableViewController {
     
     func showFriend(id: String) {
         lastSelectedFriend = datasource.friendFromID(id);
-        performSegueWithIdentifier("showFriend", sender: self);
+        // 从 spotlight 进来都 无法找到 showFriend,.
+       // performSegueWithIdentifier("showFriend", sender: self);
+        
+        let sb = UIStoryboard.init(name: "Main", bundle: nil);
+        let friendVC =  sb.instantiateViewControllerWithIdentifier("friendVCSB") as! FriendViewController;
+        friendVC.person = lastSelectedFriend;
+        self.navigationController?.pushViewController(friendVC, animated: true);
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,7 +69,13 @@ extension FriendTableViewController  {
         let selectedIndex = tableView.indexPathForSelectedRow?.row
         lastSelectedFriend = datasource.people[selectedIndex!]
         
-        performSegueWithIdentifier("showFriend", sender: self)
+//        performSegueWithIdentifier("showFriend", sender: self)
+        let sb = UIStoryboard.init(name: "Main", bundle: nil);
+        let friendVC =  sb.instantiateViewControllerWithIdentifier("friendVCSB") as! FriendViewController;
+        friendVC.person = lastSelectedFriend;
+        self.navigationController?.pushViewController(friendVC, animated: true);
+        
+        
     }
 }
 

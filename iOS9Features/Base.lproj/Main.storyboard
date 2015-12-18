@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Second-->
@@ -102,9 +102,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="kc6-Lo-Hd6" kind="show" identifier="showFriend" id="u10-Vl-HYg"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -112,6 +109,9 @@
                             <outlet property="delegate" destination="JbH-ac-4Oe" id="FZE-XJ-j5S"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="kc6-Lo-Hd6" kind="show" identifier="showFriend" id="CrU-1r-817"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P1h-Qa-PNb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,7 +120,7 @@
         <!--Friend View Controller-->
         <scene sceneID="rsS-qA-DgO">
             <objects>
-                <viewController id="kc6-Lo-Hd6" customClass="FriendViewController" customModule="iOS9Features" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="friendVCSB" id="kc6-Lo-Hd6" customClass="FriendViewController" customModule="iOS9Features" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fMO-GB-9Qg"/>
                         <viewControllerLayoutGuide type="bottom" id="id4-Yn-fIi"/>

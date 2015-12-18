@@ -27,9 +27,9 @@ class FeaturesViewController: UITableViewController {
         var cellId : String!;
         cellId = "cell";
         cell = tableView.dequeueReusableCellWithIdentifier(cellId);
-//        if (cell == nil) {
-//            cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: cellId);
-//        }
+        if (cell == nil) {
+            cell = UITableViewCell.init(style: UITableViewCellStyle.Default, reuseIdentifier: cellId);
+        }
         
         cell.textLabel?.text = _feature.objectAtIndex(indexPath.row) as? String;
         return cell;
